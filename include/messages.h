@@ -1,0 +1,4 @@
+#define HELP_EXIT_MESSAGE       "exit - exit\nQuits the program, nothing is saved or remembered\n"
+#define HELP_HELP_MESSAGE       "help - help [cmd]\nPrints out useful help information for $cmd\n$cmd must be a valid command, namely:\n\thelp\n\texit\n\tprint\n\tcompute\n"
+#define HELP_PRINT_MESSAGE      "print - print \"[str]\"\nPrints $str to stdout.\n$str must be surrounded by \" markers.\nAt this stage, \" markers are unprintable.\n"
+#define HELP_COMPUTE_MESSAGE    "compute - [A][op][B]\nComputes $A $op $B and prints the result to stdout.\n\t$A must be an integer.\n\t$op must be either '+', '-', '*', '/', or '^'.\n\t$B must be an integer.\n"
