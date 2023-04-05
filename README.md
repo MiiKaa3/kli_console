@@ -28,6 +28,7 @@ Gracefully exits the command prompt
 
 ## Build
     gcc ./src/main.c -I./include -o ./bin/kli_console
+This will only work on Linux for now, but Windows compatibility is on the TODO list.
 
 ## Run
 In your terminal run
