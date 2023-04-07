@@ -1,6 +1,20 @@
 # kli_console
 Cute little custom console app I made after reading a reddit comment.
 
+## Build
+Simply run:
+
+    git clone https://github.com/MiiKaa3/kli_console.git
+    cd ./kli_console
+    make
+
+## Run
+In your terminal run
+    
+    ./bin/kli_console
+
+and off you go!
+
 ## Instructions
 We currently have 4 working commands!
 
@@ -25,14 +39,3 @@ $cmd must be on of the four commands mentioned here, and it prints out some help
 ### exit
     exit
 Gracefully exits the command prompt
-
-## Build
-    gcc ./src/main.c -I./include -o ./bin/kli_console
-This will only work on Linux for now, but Windows compatibility is on the TODO list.
-
-## Run
-In your terminal run
-    
-    ./bin/kli_console
-
-and off you go!
