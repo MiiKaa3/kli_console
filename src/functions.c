@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include <clifunctions.h>
+#include <functions.h>
 #include <helpers.h>
 #include <messages.h>
 

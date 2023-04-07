@@ -1,12 +1,15 @@
 kliconsole: mkdirs complie build rmobj
 
-clean: rmbin rmobj
+dev: clean mkdirs complie build
 
-complie: clifunctions.o helpers.o tempbuffers.o main.o 
+clean: rmbin rmobj
+	@echo "Cleaning!"
+
+complie: functions.o helpers.o repl.o tempbuffers.o main.o 
 
 build: 
 	@echo "Building app";
-	@gcc ./obj/clifunctions.o ./obj/helpers.o ./obj/tempbuffers.o ./obj/main.o -o ./bin/kli_console -lm
+	@gcc ./obj/*.o -o ./bin/kli_console -lm
 	@echo "Done!"
 
 mkdirs:
@@ -19,13 +22,17 @@ rmbin:
 rmobj:
 	@rm -rf ./obj
 
-clifunctions.o:
-	@echo "Compliling clifunctions.c"
-	@gcc -I./include ./src/clifunctions.c -c -o ./obj/clifunctions.o
+functions.o:
+	@echo "Compliling functions.c"
+	@gcc -I./include ./src/functions.c -c -o ./obj/functions.o
 
 helpers.o:
 	@echo "Compliling helpers.c"
 	@gcc -I./include ./src/helpers.c -c -o ./obj/helpers.o
+
+repl.o:
+	@echo "Compliling repl.c"
+	@gcc -I./include ./src/repl.c -c -o ./obj/repl.o
 
 tempbuffers.o:
 	@echo "Compliling tempbuffers.c"

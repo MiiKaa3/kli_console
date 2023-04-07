@@ -3,34 +3,15 @@
 #include <stdbool.h>
 #include <string.h>
 #include <tempbuffers.h>
-#include <clifunctions.h>
+#include <functions.h>
+#include <repl.h>
 
-int main()
+int main(int argc, char** argv)
 {
-  bool running = true;
-  
-  size_t inputMaxLength = 120;
-  char* input = (char*)calloc(inputMaxLength, sizeof(char));
-  
-  size_t numTempBuffers = 10;
-  char** tempBuffers = (char**)calloc(numTempBuffers, sizeof(char*));
-  initTempBuffers(tempBuffers, numTempBuffers);
+  int returnCode;
 
-  while(running)
-  {
-    printf("KLI>>> ");
-    getline(&input, &inputMaxLength, stdin);
-    setTempBuffers(tempBuffers, numTempBuffers, input);
-    
-    if(!strcmp("exit", tempBuffers[4])) KLI_exit(&running);
-    else if(!strcmp("help", tempBuffers[4])) KLI_help(input);
-    else if(!strcmp("print", tempBuffers[5])) KLI_print(input);
-    else if(!strcmp("compute", tempBuffers[7])) KLI_compute(input, inputMaxLength);
-  }
+  if(argc == 1)
+    returnCode = KLI_replEvironment();
 
-  freeTempBuffers(tempBuffers, numTempBuffers);
-  free(tempBuffers);
-  free(input);  
-
-  return 0;
+  return returnCode;
 }
