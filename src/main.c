@@ -14,10 +14,17 @@ int main(int argc, char** argv)
   char** tempBuffers = (char**)calloc(numTempBuffers, sizeof(char*));
   initTempBuffers(tempBuffers, numTempBuffers);
 
-  if(argc == 1)
-    returnCode = KLI_replEnv(&running, input, inputMaxLength, tempBuffers, numTempBuffers);
-  if(argc == 2)
-    returnCode = KLI_scriptEnv(&running, input, inputMaxLength, tempBuffers, numTempBuffers, argv[1]);
+  switch(argc)
+  {
+    case 1: 
+      returnCode = KLI_replEnv(&running, input, inputMaxLength, tempBuffers, numTempBuffers);
+      break;
+    case 2:
+      returnCode = KLI_scriptEnv(&running, input, inputMaxLength, tempBuffers, numTempBuffers, argv[1]);
+      break;
+    default:
+      returnCode = 1;
+  }
 
   freeTempBuffers(tempBuffers, numTempBuffers);
   free(tempBuffers);

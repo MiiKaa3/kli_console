@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include <string.h>
 #include <tempbuffers.h>
 #include <functions.h>
 #include <modes.h>
@@ -34,6 +33,8 @@ int KLI_scriptEnv(bool* running, char* input, size_t inputMaxLength, char** temp
     setTempBuffers(tempBuffers, numTempBuffers, input);
     KLI_execute(tempBuffers, input, inputMaxLength, running);   
   }
+
+  fclose(file);
 
   return 0;
 }

@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 #include <helpers.h>
 
 bool isNumeric(char* ptr)
