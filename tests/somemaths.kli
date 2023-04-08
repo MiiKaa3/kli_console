@@ -1,0 +1,18 @@
+print "10 + 10 is"
+compute 10 + 10
+print ""
+
+print "20 * 30 is"
+compute 20*30
+print ""
+
+print "2^10 is"
+compute     2    ^      10
+print ""
+
+print "142144123 - 42431234 is"
+compute 142144123-42431234
+print""
+
+print "420 // 69 is"
+compute 420 / 69
