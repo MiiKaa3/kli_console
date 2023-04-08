@@ -39,3 +39,19 @@ $cmd must be on of the four commands mentioned here, and it prints out some help
 ### exit
     exit
 Gracefully exits the command prompt
+
+
+## Scripting
+To write and execute a script using kli_console just write the commands with the same syntax as in the repl, save with the *.kli extension, and execute. For example:
+
+    // ----- helloworld.kli ----- //
+    print "Hello World!"
+    // ----- EOF ----- //
+
+In terminal:
+
+    >> ./bin/kli_console ./helloworld.kli
+    Hello World!
+    >> 
+
+Check out the ./tests directory for some example scripts which should give you the idea!

@@ -8,7 +8,7 @@ clean: rmbin rmobj
 complie: functions.o helpers.o tempbuffers.o modes.o main.o 
 
 build: 
-	@echo "Building app";
+	@echo "Building app"
 	@gcc ./obj/*.o -o ./bin/kli_console -lm
 	@echo "Done!"
 
