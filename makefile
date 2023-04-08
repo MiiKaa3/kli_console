@@ -5,7 +5,7 @@ dev: clean mkdirs complie build
 clean: rmbin rmobj
 	@echo "Cleaning!"
 
-complie: functions.o helpers.o repl.o tempbuffers.o main.o 
+complie: functions.o helpers.o tempbuffers.o modes.o main.o 
 
 build: 
 	@echo "Building app";
@@ -30,13 +30,13 @@ helpers.o:
 	@echo "Compliling helpers.c"
 	@gcc -I./include ./src/helpers.c -c -o ./obj/helpers.o
 
-repl.o:
-	@echo "Compliling repl.c"
-	@gcc -I./include ./src/repl.c -c -o ./obj/repl.o
-
 tempbuffers.o:
 	@echo "Compliling tempbuffers.c"
 	@gcc -I./include ./src/tempbuffers.c -c -o ./obj/tempbuffers.o
+
+modes.o:
+	@echo "Compliling modes.c"
+	@gcc -I./include ./src/modes.c -c -o ./obj/modes.o
 
 main.o:
 	@echo "Compliling main.c"

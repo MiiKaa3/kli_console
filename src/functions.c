@@ -52,3 +52,11 @@ void KLI_exit(bool* running)
 {
   *running = false;
 }
+
+void KLI_execute(char** tempBuffers, char* input, int inputMaxLength, bool* running)
+{
+  if(!strcmp("exit", tempBuffers[4])) KLI_exit(running);
+  else if(!strcmp("help", tempBuffers[4])) KLI_help(input);
+  else if(!strcmp("print", tempBuffers[5])) KLI_print(input);
+  else if(!strcmp("compute", tempBuffers[7])) KLI_compute(input, inputMaxLength);
+}
